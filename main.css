@@ -439,15 +439,12 @@ a:visited {
     position: absolute;
     right: 0;
   }
-
   .menu_btn {
     display: flex;
   }
-
   .navigation.active {
     display: block;
   }
-
   .navigation button {
     font-size: 1rem;
     display: block;
@@ -458,17 +455,21 @@ a:visited {
     text-align: center;
     cursor: auto;
   }
-
   .navigation button a {
     line-height: 2rem;
     text-decoration: none;
     color: #292a31;
   }
-
   .greeting_container {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+  .greeting_container > div > img {
+    width: 100%;
+  }
+  .title_txt {
+    font-size: 3rem;
   }
   .desc_title_txt {
     text-align: center;
@@ -482,6 +483,19 @@ a:visited {
     display: flex;
     justify-content: center;
     margin-bottom: 2rem;
+  }
+  .about_right {
+    padding: 0 2rem;
+  }
+  .about_txt_box > span:nth-child(2) {
+    display: inline-block;
+    width: 5rem;
+    font-weight: 700;
+    margin-left: 0.5rem;
+  }
+  .about_txt_box > span:nth-child(3) {
+    display: inline-block;
+    width: 100%;
   }
   .background_box {
     display: none;
@@ -500,12 +514,13 @@ a:visited {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    padding: 0 2rem;
   }
   .skills_card {
     margin-bottom: 1rem;
   }
   .project_box {
-    padding: 0px 1rem;
+    padding: 0px 2rem;
   }
   .project_box {
     grid-template-columns: repeat(1, 1fr);
