@@ -15,4 +15,19 @@ window.onload = function () {
       topBtn.style.display = "none";
     }
   }
+
+  const menuButton = document.querySelector(".menu_btn");
+  const navigation = document.querySelector(".navigation");
+  const navLinks = document.querySelectorAll(".navigation button a");
+  const headerHeight = document.querySelector("header").offsetHeight;
+
+  menuButton.addEventListener("click", () => {
+    navigation.classList.toggle("active");
+    navigation.style.top = `${headerHeight}px`;
+  });
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      navigation.classList.remove("active");
+    });
+  });
 };
