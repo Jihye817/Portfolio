@@ -36,7 +36,14 @@ export default function Home() {
       startDate: '2021.12',
       endDate: '2023.06',
       position: 'Front-End',
-      skills: ['Vue', 'JavaScript'],
+      skills: [
+        { name: 'Vue', color: 'bg-[#4FC08D]', textColor: 'text-zinc-900' },
+        {
+          name: 'JavaScript',
+          color: 'bg-[#F7DF1E]',
+          textColor: 'text-zinc-900',
+        },
+      ],
       details: [
         'CCTV 영상 재생 페이지의 동영상 북마크, 클립 리스트 구현',
         '동영상 동시재생 화면 구현',
@@ -49,7 +56,14 @@ export default function Home() {
       startDate: '2020.06',
       endDate: '2022.05',
       position: 'Back-End',
-      skills: ['SpringBoot', 'Java'],
+      skills: [
+        {
+          name: 'SpringBoot',
+          color: 'bg-[#6DB33F]',
+          textColor: 'text-zinc-900',
+        },
+        { name: 'Java', color: 'bg-zinc-700', textColor: 'text-zinc-200' },
+      ],
       details: ['AI 무인 매대 시스템 파악 및 서버 유지보수'],
     },
     {
@@ -58,7 +72,10 @@ export default function Home() {
       startDate: '2020.06',
       endDate: '2020.11',
       position: 'Application',
-      skills: ['Flutter', 'Dart'],
+      skills: [
+        { name: 'Flutter', color: 'bg-[#02569B]', textColor: 'text-zinc-200' },
+        { name: 'Dart', color: 'bg-[#0175C2]', textColor: 'text-zinc-200' },
+      ],
       details: [
         '캣휠, 체중계, 팬던트 등의 IOT 기기와 블루투스 연결으로 데이터를 표시해주는 모바일 어플 개발',
         'Firebase와 연동하여 실시간 사용자 데이터 처리',
@@ -70,7 +87,10 @@ export default function Home() {
       startDate: '2020.06',
       endDate: '2020.06',
       position: 'Application',
-      skills: ['Flutter', 'Dart'],
+      skills: [
+        { name: 'Flutter', color: 'bg-[#02569B]', textColor: 'text-zinc-200' },
+        { name: 'Dart', color: 'bg-[#0175C2]', textColor: 'text-zinc-200' },
+      ],
       details: ['시스템 파악 및 메뉴 목록 페이지 구현'],
     },
   ];
@@ -109,35 +129,35 @@ export default function Home() {
       icon: 'arrow-down.png',
       link: 'https://naver.com',
       color: 'bg-blue-500',
-      backColor: 'bg-blue-600',
+      backColor: 'bg-blue-950',
     },
     {
       title: 'Github',
       icon: 'arrow-down.png',
       link: 'https://github.com/Jihye817',
       color: 'bg-black',
-      backColor: 'bg-blue-600',
+      backColor: 'bg-indigo-500',
     },
     {
       title: 'Blog',
       icon: 'arrow-down.png',
       link: 'https://errorlog.tistory.com/',
-      color: 'bg-orange-600',
-      backColor: 'bg-orange-700',
+      color: 'bg-amber-500',
+      backColor: 'bg-amber-950',
     },
     {
       title: '연락처',
       icon: 'arrow-down.png',
       link: '010-3081-0817',
-      color: 'bg-black/80',
-      backColor: 'bg-black',
+      color: 'bg-black',
+      backColor: 'bg-sky-950',
     },
     {
       title: 'Email',
       icon: 'arrow-down.png',
       link: 'wlgul817@gmail.com',
-      color: 'bg-black',
-      backColor: 'bg-blue-600',
+      color: 'bg-rose-700',
+      backColor: 'bg-rose-950',
     },
   ];
 
@@ -175,7 +195,7 @@ export default function Home() {
           <div className='flex gap-[1rem]'>
             <span>
               <a
-                className='cursor-pointer rounded-full px-3 py-2 hover:bg-blue-400/40'
+                className='cursor-pointer rounded-full px-3 py-2 hover:bg-teal-500/30'
                 href='#about'
               >
                 About
@@ -183,7 +203,7 @@ export default function Home() {
             </span>
             <span>
               <a
-                className='cursor-pointer rounded-full px-3 py-2 hover:bg-blue-400/40'
+                className='cursor-pointer rounded-full px-3 py-2 hover:bg-sky-500/30'
                 href='#skills'
               >
                 Skills
@@ -191,7 +211,7 @@ export default function Home() {
             </span>
             <span>
               <a
-                className='cursor-pointer rounded-full px-3 py-2 hover:bg-blue-400/40'
+                className='cursor-pointer rounded-full px-3 py-2 hover:bg-blue-500/30'
                 href='#career'
               >
                 Career
@@ -199,7 +219,7 @@ export default function Home() {
             </span>
             <span>
               <a
-                className='cursor-pointer rounded-full px-3 py-2 hover:bg-blue-400/40'
+                className='cursor-pointer rounded-full px-3 py-2 hover:bg-indigo-500/30'
                 href='#projects'
               >
                 Projects
@@ -241,10 +261,10 @@ export default function Home() {
         </section>
         <section
           id='about'
-          className='flex w-full flex-col bg-[#ededed] px-30 py-[5rem] text-[#292a31]'
+          className='bg-foreground flex w-full flex-col px-30 py-[5rem] text-[#292a31]'
         >
           <div className='mb-5 text-[3.5rem] font-black'>
-            <a className='text-blue-500'>A</a>bout
+            <a className='text-blue-400'>A</a>bout
           </div>
           <div className='flex gap-10'>
             <div className='grid w-full flex-1 grid-cols-2 grid-rows-3 gap-5'>
@@ -268,7 +288,7 @@ export default function Home() {
               </div>
 
               <div className='mb-[2rem] leading-[2rem]'>
-                <div className='mb-1 border-b-1 border-blue-500 pb-1'>
+                <div className='mb-1 border-b-1 border-blue-400 pb-1'>
                   <span className='text-[1.5rem] font-extrabold'>
                     Education
                   </span>
@@ -287,7 +307,7 @@ export default function Home() {
                 </div>
               </div>
               <div className='mb-[2rem]'>
-                <div className='mb-1 border-b-1 border-blue-500 pb-1'>
+                <div className='mb-1 border-b-1 border-blue-400 pb-1'>
                   <span className='text-[1.5rem] font-extrabold'>
                     Certification
                   </span>
@@ -300,13 +320,16 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id='skills' className='flex min-h-dvh w-full flex-col px-30'>
+        <section
+          id='skills'
+          className='flex min-h-dvh w-full flex-col bg-blue-300 px-30'
+        >
           <div className='mb-[2rem] pt-[5rem] text-[3.5rem] font-black'>
-            <a className='text-blue-500'>S</a>kills
+            <a className='text-zinc-900'>S</a>kills
           </div>
           <div className='flex w-full flex-col gap-5 pb-[5rem]'>
             {techStackList.map(techStack => (
-              <div className='flex items-center rounded-[1rem] bg-white/10 p-7'>
+              <div className='flex items-center rounded-[1rem] bg-blue-950/20 p-7'>
                 <div className='flex-1 p-2 pr-7 text-center text-[1.5rem] font-bold'>
                   {techStack.title}
                 </div>
@@ -317,12 +340,14 @@ export default function Home() {
                       className='flex items-center justify-center rounded-[0.5rem] bg-white p-[0.2rem]'
                     >
                       <div className='group/icons relative'>
-                        <Image
-                          src={`/assets/icons/logo-${icon}.png`}
-                          alt={icon}
-                          width={60}
-                          height={60}
-                        ></Image>
+                        <div className='flex aspect-square w-full items-center justify-center'>
+                          <Image
+                            src={`/assets/icons/logo-${icon}.png`}
+                            alt={icon}
+                            width={60}
+                            height={60}
+                          ></Image>
+                        </div>
                         <p className='invisible absolute bottom-[-2rem] left-[50%] z-100 translate-x-[-50%] rounded-[0.5rem] bg-blue-500 px-2 py-0.5 group-hover/icons:visible'>
                           {icon}
                         </p>
@@ -334,36 +359,17 @@ export default function Home() {
             ))}
           </div>
         </section>
-        <section
-          id='career'
-          className='flex min-h-dvh w-full flex-col bg-[#ededed] px-30 pt-[5rem] pb-[5rem] text-[#292a31]'
-        >
-          <div className='mb-[2rem] text-[3.5rem] font-black'>
-            <a className='text-blue-500'>C</a>areer
-          </div>
-          <div className='flex w-full gap-[1rem] rounded-[1rem] bg-blue-950/10 px-[2rem] py-[2rem]'>
-            <div className='flex flex-1 flex-col'>
-              <span className=''>2020.06 ~ 2023.06</span>
-              <span className='text-[1.5rem] font-bold'>(주)베이리스</span>
-              <span className='text-blue-950/70'>플랫폼팀 / 연구원</span>
-            </div>
-            <div className='flex-4'>
-              {mockData.map(career => (
-                <CareerListItem career={career} key={career.title} />
-              ))}
-            </div>
-          </div>
-        </section>
+
         <section
           id='projects'
           className='flex min-h-dvh w-full flex-col px-30 pt-[5rem]'
         >
           <div className='mb-[2rem] text-[3.5rem] font-black'>
-            <a className='text-blue-500'>P</a>rojects
+            <a className='text-blue-400'>P</a>rojects
           </div>
           <div className='grid w-full grid-cols-3 gap-5'>
             <div className='group/projects relative h-[25rem] rounded-[1rem] bg-gradient-to-r from-blue-300 to-blue-500 p-[1px]'>
-              <div className='absolute top-0 left-0 z-100 h-full w-full rounded-[1rem] border-1 bg-[#121212] opacity-0 group-hover/projects:opacity-100'>
+              <div className='absolute top-0 left-0 z-100 h-full w-full rounded-[1rem] border-1 bg-neutral-900 opacity-0 group-hover/projects:opacity-100'>
                 <div className='flex h-full flex-col items-center justify-center gap-3 p-5 text-center'>
                   <div
                     className='w-2/3 cursor-pointer rounded-[0.2rem] border-1 py-2 hover:bg-white/20'
@@ -407,6 +413,26 @@ export default function Home() {
             </div>
           </div>
           <ProjectModal isOpen={isOpen} setIsOpen={setIsOpen} />
+        </section>
+        <section
+          id='career'
+          className='bg-foreground flex min-h-dvh w-full flex-col px-30 pt-[5rem] pb-[5rem] text-zinc-900'
+        >
+          <div className='mb-[2rem] text-[3.5rem] font-black'>
+            <a className='text-blue-400'>C</a>areer
+          </div>
+          <div className='flex w-full gap-[1rem] rounded-[1rem] bg-blue-950/10 px-[2rem] py-[2rem]'>
+            <div className='flex flex-1 flex-col'>
+              <span className=''>2020.06 ~ 2023.06</span>
+              <span className='text-[1.5rem] font-bold'>(주)베이리스</span>
+              <span className='text-blue-950/70'>플랫폼팀 / 연구원</span>
+            </div>
+            <div className='flex-4'>
+              {mockData.map(career => (
+                <CareerListItem career={career} key={career.title} />
+              ))}
+            </div>
+          </div>
         </section>
         <footer className='mt-[5rem] text-center text-[0.8rem]'>
           Copyright 2025. ParkJihye All rights reserved.

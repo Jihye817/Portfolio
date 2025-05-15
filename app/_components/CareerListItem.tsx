@@ -14,27 +14,27 @@ function CareerListItem({ career }: CareerProps) {
           <span className='mr-[1rem]'>
             {career.startDate} ~ {career.endDate}
           </span>
-          <span className='rounded-[0.5rem] bg-blue-500 px-[0.7rem] py-[0.2rem] text-white'>
+          <span className='rounded-[0.5rem] bg-blue-400 px-[0.7rem] py-[0.2rem] text-foreground'>
             {career.position}
           </span>
         </div>
-        <span className='text-[1.2rem] font-semibold'>{career.title}</span>
-        <span className='mb-[0.5rem] text-blue-950/70'>
+        <span className='text-[1.2rem] font-bold'>{career.title}</span>
+        <span className='mb-[1rem] text-[1rem] text-blue-950/70'>
           {career.description}
         </span>
-        <span className='mb-[0.5rem] font-semibold'>기술</span>
+        <span className='font-semibold'>기술</span>
         <div className='mb-[1rem] flex gap-[0.5rem]'>
           {career.skills.map(skill => (
             <div
-              className='group/skill relative flex gap-2 rounded-[0.5rem] bg-blue-500 p-1 px-[1rem]'
-              key={skill}
+              className={`group/skill relative flex gap-2 rounded-[0.5rem] ${skill.color} ${skill.textColor} p-1 px-[1rem] py-[0.2rem]`}
+              key={skill.name}
             >
-              {skill}
+              {skill.name}
             </div>
           ))}
         </div>
         <span className='font-semibold'>업무 내용</span>
-        <div className='flex flex-col rounded-[0.5rem] bg-white/10 p-[1rem]'>
+        <div className='flex flex-col rounded-[0.5rem] bg-blue-950/10 p-[1rem]'>
           {career.details.map((detail, index) => (
             <span key={index}>{`- ${detail}`}</span>
           ))}
