@@ -7,6 +7,7 @@ import ProjectModal from './_components/ProjectModal';
 import AboutCard from './_components/AboutCard';
 import { careerData } from './_data/careerData';
 import { aboutData } from './_data/aboutData';
+import { skillData } from './_data/skillData';
 
 export default function Home() {
   const mockIconList: string[] = [
@@ -27,35 +28,6 @@ export default function Home() {
     'SpringBoot',
     'Java',
     'MySQL',
-  ];
-  const techStackList = [
-    {
-      title: 'Front-End',
-      skills: [
-        'TypeScript',
-        'JavaScript',
-        'React',
-        'Next.js',
-        'Vue',
-        'Zustand',
-        'HTML5',
-        'CSS3',
-        'TailwindCSS',
-        'TanstackQuery',
-      ],
-    },
-    {
-      title: 'Back-End',
-      skills: ['Java', 'SpringBoot', 'MySQL'],
-    },
-    {
-      title: 'Mobile',
-      skills: ['Flutter', 'Dart'],
-    },
-    {
-      title: 'Others',
-      skills: ['Git', 'Github', 'Figma'],
-    },
   ];
 
   const [isBgDark, setIsBgDark] = useState(false);
@@ -225,8 +197,11 @@ export default function Home() {
             <a className='text-zinc-900'>S</a>kills
           </div>
           <div className='flex w-full flex-col gap-5 pb-[5rem]'>
-            {techStackList.map(techStack => (
-              <div className='flex items-center rounded-[1rem] bg-blue-950/20 p-7'>
+            {skillData.map(techStack => (
+              <div
+                className='flex items-center rounded-[1rem] bg-blue-950/20 p-7'
+                key={techStack.title}
+              >
                 <div className='flex-1 p-2 pr-7 text-center text-[1.5rem] font-bold'>
                   {techStack.title}
                 </div>
@@ -239,13 +214,13 @@ export default function Home() {
                       <div className='group/icons relative'>
                         <div className='flex aspect-square w-full items-center justify-center'>
                           <Image
-                            src={`/assets/icons/logo-${icon}.png`}
+                            src={`/assets/icons/logo/${icon}.png`}
                             alt={icon}
                             width={60}
                             height={60}
                           ></Image>
                         </div>
-                        <p className='invisible absolute bottom-[-2rem] left-[50%] z-100 translate-x-[-50%] rounded-[0.5rem] bg-blue-500 px-2 py-0.5 group-hover/icons:visible'>
+                        <p className='invisible absolute bottom-[-2rem] left-[50%] z-100 translate-x-[-50%] rounded-[0.5rem] bg-black px-2 py-0.5 group-hover/icons:visible'>
                           {icon}
                         </p>
                       </div>
