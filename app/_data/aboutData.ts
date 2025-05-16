@@ -34,7 +34,7 @@ export const aboutData = [
   {
     title: 'Email',
     icon: 'gmail.svg',
-    text: 'mailto:wlgul817@gmail.com',
+    text: 'wlgul817@gmail.com',
     link: 'mailto:wlgul817@gmail.com',
     color: 'bg-rose-700',
     backColor: 'bg-rose-950',
