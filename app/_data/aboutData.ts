@@ -1,0 +1,42 @@
+export const aboutData = [
+  {
+    title: '이력서 다운로드',
+    icon: 'download.svg',
+    text: '다운로드',
+    link: 'download:/assets/images/avatar.png',
+    color: 'bg-blue-500',
+    backColor: 'bg-blue-950',
+  },
+  {
+    title: 'Github',
+    icon: 'github.svg',
+    text: 'https://github.com/Jihye817',
+    link: 'https://github.com/Jihye817',
+    color: 'bg-black',
+    backColor: 'bg-indigo-500',
+  },
+  {
+    title: 'Blog',
+    icon: 'tistory.svg',
+    text: 'https://errorlog.tistory.com/',
+    link: 'https://errorlog.tistory.com/',
+    color: 'bg-amber-500',
+    backColor: 'bg-amber-950',
+  },
+  {
+    title: '연락처',
+    icon: 'phone.svg',
+    text: '010-3081-0817',
+    link: '',
+    color: 'bg-black',
+    backColor: 'bg-sky-950',
+  },
+  {
+    title: 'Email',
+    icon: 'gmail.svg',
+    text: 'mailto:wlgul817@gmail.com',
+    link: 'mailto:wlgul817@gmail.com',
+    color: 'bg-rose-700',
+    backColor: 'bg-rose-950',
+  },
+];
