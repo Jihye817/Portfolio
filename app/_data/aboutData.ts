@@ -3,7 +3,7 @@ export const aboutData = [
     title: '이력서 다운로드',
     icon: 'download.svg',
     text: '다운로드',
-    link: 'download:/assets/images/avatar.png',
+    link: 'download:/parkjihye-resume.pdf',
     color: 'bg-blue-500',
     backColor: 'bg-blue-950',
   },

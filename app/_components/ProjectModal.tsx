@@ -56,12 +56,14 @@ function ProjectModal({ item, isOpen, setIsOpen }: ProjectModalProps) {
           </div>
           <div className='px-30 pt-10 pb-20'>
             <div className='mt-2 flex justify-center gap-1 text-[0.8rem]'>
-              <span className='rounded-[0.5rem] bg-blue-500/50 px-[0.5rem] py-[0.2rem]'>
-                팀 프로젝트
-              </span>
-              <span className='rounded-[0.5rem] bg-blue-500/50 px-[0.5rem] py-[0.2rem]'>
-                Web
-              </span>
+              {item?.tags.map(tag => (
+                <span
+                  className='rounded-[0.5rem] bg-blue-500/50 px-[0.5rem] py-[0.2rem]'
+                  key={tag}
+                >
+                  {tag}
+                </span>
+              ))}
             </div>
             <div className='mt-2 text-center'>{item?.date}</div>
             <div className='text-center text-[2rem] font-bold'>
@@ -95,7 +97,7 @@ function ProjectModal({ item, isOpen, setIsOpen }: ProjectModalProps) {
                 <div className='text-[1.5rem] font-semibold'>
                   👥 진행 인원 및 역할
                 </div>
-                <ul className='ml-[2rem] list-disc'>
+                <ul className='ml-[2rem] list-disc py-1 leading-[1.7rem]'>
                   <li>
                     <a className='font-semibold'>총 인원:</a> {item?.members}
                   </li>
@@ -106,7 +108,7 @@ function ProjectModal({ item, isOpen, setIsOpen }: ProjectModalProps) {
               </div>
               <div>
                 <div className='text-[1.5rem] font-semibold'>🛠️ 사용 기술</div>
-                <div className='ml-[2rem] flex gap-2'>
+                <div className='ml-[2rem] flex gap-2 py-1'>
                   {item?.skills.map(skill => (
                     <span
                       className='rounded-[0.5rem] bg-gray-400/50 px-[0.5rem] py-[0.2rem]'
@@ -121,7 +123,7 @@ function ProjectModal({ item, isOpen, setIsOpen }: ProjectModalProps) {
                 <div className='text-[1.5rem] font-semibold'>
                   ⚙️ 주요 기능 및 특징
                 </div>
-                <ul className='ml-[2rem] list-disc'>
+                <ul className='ml-[2rem] list-disc py-1 leading-[1.7rem]'>
                   {item?.features.map(feature => (
                     <li key={feature}>{feature}</li>
                   ))}
@@ -129,7 +131,7 @@ function ProjectModal({ item, isOpen, setIsOpen }: ProjectModalProps) {
               </div>
               <div>
                 <div className='text-[1.5rem] font-semibold'>✏️ 작업 내용</div>
-                <ul className='ml-[2rem] list-disc py-1'>
+                <ul className='ml-[2rem] list-disc py-1 leading-[1.7rem]'>
                   {item?.parts.map(part => <li key={part}>{part}</li>)}
                 </ul>
               </div>
@@ -138,7 +140,9 @@ function ProjectModal({ item, isOpen, setIsOpen }: ProjectModalProps) {
                   <div className='text-[1.5rem] font-semibold'>
                     🔥 트러블슈팅
                   </div>
-                  <div className='ml-[2rem]'>{item?.troubleshooting}</div>
+                  <div className='ml-[2rem] py-1 whitespace-pre-line leading-[1.7rem]'>
+                    {item?.troubleshooting}
+                  </div>
                 </div>
               )}
               {item?.retrospect && (
