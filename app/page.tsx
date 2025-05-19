@@ -148,10 +148,13 @@ export default function Home() {
         </div>
       </header>
       <main className='mb-[3rem] flex w-full flex-col items-center'>
-        <section id='home' className='flex h-dvh w-full justify-center px-30'>
-          <div className='relative flex w-full items-center justify-center gap-10'>
-            <div className=''>
-              <span className='text-[3.5rem] font-bold'>
+        <section
+          id='home'
+          className='flex min-h-dvh w-full justify-center px-20 pt-25 pb-10 lg:h-dvh lg:px-30 lg:py-0'
+        >
+          <div className='relative flex w-full flex-col items-center justify-center gap-10 lg:flex-row'>
+            <div className='text-center md:text-left'>
+              <span className='text-[2.5rem] font-bold break-keep md:text-[3.5rem]'>
                 안녕하세요, <br />
                 끊임없이 도전하는 <br />
                 프론트엔드 개발자
