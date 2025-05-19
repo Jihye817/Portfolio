@@ -199,7 +199,7 @@ export default function Home() {
                       <div className='group/icons relative'>
                         <div className='flex aspect-square w-full items-center justify-center'>
                           <Image
-                            src={`/assets/icons/logo/${icon}.png`}
+                            src={`/assets/icons/logo/${icon.toLowerCase()}.png`}
                             alt={icon}
                             width={60}
                             height={60}
