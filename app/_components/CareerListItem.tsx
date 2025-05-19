@@ -9,14 +9,14 @@ function CareerListItem({ career }: CareerProps) {
   return (
     <div className='mb-[3rem] flex gap-3'>
       <div className='w-[4px] bg-gradient-to-t from-blue-300 to-blue-950'></div>
-      <div className='flex flex-col'>
-        <div className='mb-[0.5rem]'>
-          <span className='mr-[1rem]'>
+      <div className='flex flex-col w-full'>
+        <div className='mb-[0.5rem] flex flex-col md:flex-row'>
+          <div className='mr-[1rem]'>
             {career.startDate} ~ {career.endDate}
-          </span>
-          <span className='text-foreground rounded-[0.5rem] bg-blue-500 px-[0.7rem] py-[0.2rem]'>
+          </div>
+          <div className='text-foreground rounded-[0.5rem] bg-blue-500 px-[0.7rem] py-[0.2rem] w-fit'>
             {career.position}
-          </span>
+          </div>
         </div>
         <span className='text-[1.2rem] font-bold'>{career.title}</span>
         <span className='mb-[1rem] text-[1rem] text-blue-950/70'>
