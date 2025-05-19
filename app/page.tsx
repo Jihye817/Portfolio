@@ -14,6 +14,7 @@ import { Project } from './_types/project';
 
 export default function Home() {
   const [isBgDark, setIsBgDark] = useState(false);
+  const [isNavOpen, setIsNavOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
@@ -36,16 +37,80 @@ export default function Home() {
   };
 
   return (
-    <div className=''>
-      <header className='fixed top-0 z-999 w-full'>
+    <div className='min-w-[375px]'>
+      <header className='fixed top-0 z-999 w-full min-w-[375px]'>
         <div
-          className={`flex items-center justify-between px-[3rem] py-[1rem] text-[1.2rem] backdrop-blur-lg ${
+          className={`flex items-center justify-between px-[2rem] py-[1rem] backdrop-blur-lg md:hidden ${
+            isBgDark
+              ? 'text-background bg-white/40 shadow'
+              : 'bg-transparent shadow shadow-white'
+          }`}
+        >
+          <div className='text-[1.5rem] md:text-[2rem]'>Jihye's Portfolio</div>
+          <button
+            onClick={() => setIsNavOpen(prev => !prev)}
+            className='hover:cursor-pointer'
+          >
+            <Image
+              src={
+                isBgDark
+                  ? '/assets/icons/common/bars-dark.svg'
+                  : '/assets/icons/common/bars.svg'
+              }
+              alt='menubar'
+              width={24}
+              height={24}
+            />
+          </button>
+        </div>
+        {isNavOpen && (
+          <div className='w-full'>
+            <div
+              className={`flex flex-col ${
+                isBgDark
+                  ? 'text-background bg-white shadow-md'
+                  : 'bg-transparent shadow shadow-white backdrop-blur-lg'
+              }`}
+            >
+              <a
+                className='w-full cursor-pointer px-5 py-4 hover:bg-blue-500/30'
+                href='#about'
+                onClick={() => setIsNavOpen(false)}
+              >
+                About
+              </a>
+              <a
+                className='w-full cursor-pointer px-5 py-4 hover:bg-blue-500/30'
+                href='#skills'
+                onClick={() => setIsNavOpen(false)}
+              >
+                Skills
+              </a>
+              <a
+                className='w-full cursor-pointer px-5 py-4 hover:bg-blue-500/30'
+                href='#career'
+                onClick={() => setIsNavOpen(false)}
+              >
+                Career
+              </a>
+              <a
+                className='w-full cursor-pointer px-5 py-4 hover:bg-blue-500/30'
+                href='#projects'
+                onClick={() => setIsNavOpen(false)}
+              >
+                Projects
+              </a>
+            </div>
+          </div>
+        )}
+        <div
+          className={`hidden items-center justify-between px-[3rem] py-[1rem] text-[1.2rem] backdrop-blur-lg md:flex ${
             isBgDark
               ? 'bg-white/40 text-black shadow'
               : 'bg-transparent shadow shadow-white'
           }`}
         >
-          <div className='text-[2rem]'>Jihye's Portfolio</div>
+          <div className='text-[2rem] sm:text-[2rem]'>Jihye's Portfolio</div>
           <div className='flex gap-[1rem]'>
             <span>
               <a
