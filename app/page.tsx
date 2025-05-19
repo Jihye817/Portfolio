@@ -246,33 +246,32 @@ export default function Home() {
         </section>
         <section
           id='skills'
-          className='flex min-h-dvh w-full flex-col bg-blue-300 px-30'
+          className='flex min-h-dvh w-full flex-col bg-blue-300 px-20 lg:px-30'
         >
-          <div className='mb-[2rem] pt-[5rem] text-[3.5rem] font-black'>
+          <div className='mb-[2rem] pt-[5rem] text-[2.5rem] font-black md:text-[3.5rem]'>
             <a className='text-zinc-900'>S</a>kills
           </div>
           <div className='flex w-full flex-col gap-5 pb-[5rem]'>
             {skillData.map(techStack => (
               <div
-                className='flex items-center rounded-[1rem] bg-blue-950/20 p-7'
+                className='flex flex-col items-center rounded-[1rem] bg-blue-950/20 p-7 md:flex-row'
                 key={techStack.title}
               >
-                <div className='flex-1 p-2 pr-7 text-center text-[1.5rem] font-bold'>
+                <div className='flex-1 p-2 pb-5 text-center text-[1.5rem] font-bold md:pr-7 md:pb-2'>
                   {techStack.title}
                 </div>
-                <div className='flex flex-5 flex-wrap gap-x-2 gap-y-2'>
+                <div className='flex flex-5 flex-wrap justify-center gap-x-2 gap-y-2 md:justify-start'>
                   {techStack.skills.map(icon => (
                     <div
                       key={icon}
                       className='flex items-center justify-center rounded-[0.5rem] bg-white p-[0.2rem]'
                     >
                       <div className='group/icons relative'>
-                        <div className='flex aspect-square w-full items-center justify-center'>
+                        <div className='flex aspect-square h-[40px] w-[40px] w-full items-center justify-center md:h-[60px] md:w-[60px]'>
                           <Image
                             src={`/assets/icons/logo/${icon.toLowerCase()}.png`}
                             alt={icon}
-                            width={60}
-                            height={60}
+                            fill
                           ></Image>
                         </div>
                         <p className='invisible absolute bottom-[-2rem] left-[50%] z-100 translate-x-[-50%] rounded-[0.5rem] bg-black px-2 py-0.5 group-hover/icons:visible'>
