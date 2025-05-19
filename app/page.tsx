@@ -8,30 +8,14 @@ import AboutCard from './_components/AboutCard';
 import { careerData } from './_data/careerData';
 import { aboutData } from './_data/aboutData';
 import { skillData } from './_data/skillData';
+import { projectData } from './_data/project/projectData';
+import ProjectCard from './_components/ProjectCard';
+import { Project } from './_types/project';
 
 export default function Home() {
-  const mockIconList: string[] = [
-    'TypeScript',
-    'JavaScript',
-    'Vue',
-    'Next.js',
-    'TailwindCSS',
-    'HTML5',
-    'CSS3',
-    'Zustand',
-    'React', //#61DAFB
-    'TanstackQuery',
-    'Flutter',
-    'Dart',
-    'Github',
-    'Git',
-    'SpringBoot',
-    'Java',
-    'MySQL',
-  ];
-
   const [isBgDark, setIsBgDark] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,8 +30,9 @@ export default function Home() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleButtonClick = () => {
-    setIsOpen(!isOpen);
+  const handleButtonClick = (project: Project) => {
+    setSelectedProject(project);
+    setIsOpen(true);
   };
 
   return (
@@ -64,7 +49,7 @@ export default function Home() {
           <div className='flex gap-[1rem]'>
             <span>
               <a
-                className='cursor-pointer rounded-full px-3 py-2 hover:bg-teal-500/30'
+                className='cursor-pointer rounded-full px-3 py-2 hover:bg-blue-500/30'
                 href='#about'
               >
                 About
@@ -72,7 +57,7 @@ export default function Home() {
             </span>
             <span>
               <a
-                className='cursor-pointer rounded-full px-3 py-2 hover:bg-sky-500/30'
+                className='cursor-pointer rounded-full px-3 py-2 hover:bg-blue-500/30'
                 href='#skills'
               >
                 Skills
@@ -88,7 +73,7 @@ export default function Home() {
             </span>
             <span>
               <a
-                className='cursor-pointer rounded-full px-3 py-2 hover:bg-indigo-500/30'
+                className='cursor-pointer rounded-full px-3 py-2 hover:bg-blue-500/30'
                 href='#projects'
               >
                 Projects
@@ -240,51 +225,19 @@ export default function Home() {
             <a className='text-blue-400'>P</a>rojects
           </div>
           <div className='grid w-full grid-cols-3 gap-5'>
-            <div className='group/projects relative h-[25rem] rounded-[1rem] bg-gradient-to-r from-blue-300 to-blue-500 p-[1px]'>
-              <div className='absolute top-0 left-0 z-100 h-full w-full rounded-[1rem] border-1 bg-neutral-900 opacity-0 group-hover/projects:opacity-100'>
-                <div className='flex h-full flex-col items-center justify-center gap-3 p-5 text-center'>
-                  <div
-                    className='w-2/3 cursor-pointer rounded-[0.2rem] border-1 py-2 hover:bg-white/20'
-                    onClick={handleButtonClick}
-                  >
-                    자세히보기
-                  </div>
-                  <div className='w-2/3 cursor-pointer rounded-[0.2rem] border-1 py-2 hover:bg-white/20'>
-                    Github 바로가기
-                  </div>
-                </div>
-              </div>
-              <div className='relative h-full overflow-hidden rounded-[1rem] bg-black/70'>
-                <div className='relative h-[50%] w-full overflow-hidden'>
-                  <Image
-                    className='object-cover'
-                    src={'/assets/images/ttolgaebi.png'}
-                    alt='똘개비'
-                    fill
-                  ></Image>
-                </div>
-                <div className='flex h-[50%] flex-col justify-between px-4 py-5'>
-                  <div>
-                    <div className='text-[1.5rem] font-semibold'>
-                      나의 똘똘한 비서 - 똘개비
-                    </div>
-                    <div className='text-white/70'>
-                      일정 관리 웹 어플리케이션
-                    </div>
-                  </div>
-                  <div className='flex gap-1 text-[0.7rem]'>
-                    <span className='rounded-[0.2rem] bg-blue-500/40 px-2 py-1'>
-                      팀 프로젝트
-                    </span>
-                    <span className='rounded-[0.2rem] bg-blue-500/40 px-2 py-1'>
-                      Web
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {projectData.map(item => (
+              <ProjectCard
+                item={item}
+                handleButtonClick={() => handleButtonClick(item)}
+                key={item.title}
+              />
+            ))}
           </div>
-          <ProjectModal isOpen={isOpen} setIsOpen={setIsOpen} />
+          <ProjectModal
+            item={selectedProject}
+            isOpen={isOpen}
+            setIsOpen={setIsOpen}
+          />
         </section>
         <section
           id='career'

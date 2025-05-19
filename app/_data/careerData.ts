@@ -16,9 +16,8 @@ export const careerData: Career[] = [
       },
     ],
     details: [
-      'CCTV 영상 재생 페이지의 동영상 북마크, 클립 리스트 구현',
-      '동영상 동시재생 화면 구현',
-      '관리자 메뉴 웹페이지 구현',
+      'Vue 2와 JavaScript, Vuetify 를 활용해 동영상 북마크, 클립 리스트, 동영상 동시재생 화면 구현',
+      '테스트 디바이스 데이터 관리가 가능한 관리자 웹페이지 구현',
     ],
   },
   {
@@ -35,7 +34,10 @@ export const careerData: Career[] = [
       },
       { name: 'Java', color: 'bg-zinc-700', textColor: 'text-zinc-200' },
     ],
-    details: ['AI 무인 매대 시스템 파악 및 서버 유지보수'],
+    details: [
+      'AI 무인 매대 시스템 파악 및 서버 유지보수',
+      '다날 결제 시스템 연동',
+    ],
   },
   {
     title: '캣휠 (Cat Wheel)',
@@ -48,8 +50,8 @@ export const careerData: Career[] = [
       { name: 'Dart', color: 'bg-[#0175C2]', textColor: 'text-zinc-200' },
     ],
     details: [
-      '캣휠, 체중계, 팬던트 등의 IOT 기기와 블루투스 연결으로 데이터를 표시해주는 모바일 어플 개발',
-      'Firebase와 연동하여 실시간 사용자 데이터 처리',
+      'Flutter와 Dart를 활용해 캣휠, 체중계, 팬던트 등의 IOT 기기와 블루투스 연결으로 데이터를 표시해주는 모바일 어플 개발',
+      'Firebase와 연동하여 실시간 사용자 데이터 처리 구현',
     ],
   },
   {
@@ -62,6 +64,6 @@ export const careerData: Career[] = [
       { name: 'Flutter', color: 'bg-[#02569B]', textColor: 'text-zinc-200' },
       { name: 'Dart', color: 'bg-[#0175C2]', textColor: 'text-zinc-200' },
     ],
-    details: ['시스템 파악 및 메뉴 목록 페이지 구현'],
+    details: ['모바일 앱 시스템 파악 및 메뉴 목록 페이지 구현'],
   },
 ];

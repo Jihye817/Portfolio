@@ -14,7 +14,7 @@ function CareerListItem({ career }: CareerProps) {
           <span className='mr-[1rem]'>
             {career.startDate} ~ {career.endDate}
           </span>
-          <span className='rounded-[0.5rem] bg-blue-400 px-[0.7rem] py-[0.2rem] text-foreground'>
+          <span className='text-foreground rounded-[0.5rem] bg-blue-500 px-[0.7rem] py-[0.2rem]'>
             {career.position}
           </span>
         </div>
