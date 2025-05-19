@@ -36,16 +36,16 @@ function AboutCard({ index, item }: AboutCardProps) {
 
   return (
     <div
-      className={`${index === 0 ? 'row-span-2' : ''} w-full`}
+      className={`${index === 0 ? 'col-span-2 md:col-span-1 md:row-span-2' : ''} w-full`}
       onMouseEnter={() => setIsFlipped(true)}
       onMouseLeave={() => setIsFlipped(false)}
     >
       <div
-        className={`relative h-full w-full duration-500 transform-3d ${isFlipped ? 'rotate-y-180' : ''}`}
+        className={`relative h-[6rem] w-full duration-500 transform-3d md:h-full ${isFlipped ? 'rotate-y-180' : ''}`}
       >
         <div className='absolute h-full w-full backface-hidden'>
           <div
-            className={`flex h-full w-full cursor-pointer items-center justify-center rounded-[1rem] ${item.color} text-[1.3rem] font-medium text-white`}
+            className={`flex h-full w-full cursor-pointer items-center justify-center rounded-[1rem] px-2 text-center break-keep ${item.color} text-[1rem] font-medium text-white md:text-[1.3rem]`}
           >
             {item.title}
           </div>
@@ -55,7 +55,9 @@ function AboutCard({ index, item }: AboutCardProps) {
             className={`flex h-full w-full cursor-pointer flex-col items-center justify-center gap-3 rounded-[1rem] ${item.backColor} font-medium text-white`}
             onClick={() => handleClick(item.link)}
           >
-            <div className='h-[2rem] w-[2rem]'>
+            <div
+              className={`h-[2rem] w-[2rem] ${item.title === '연락처' ? 'hidden' : 'block'}`}
+            >
               <Image
                 src={`/assets/icons/about/${item.icon}`}
                 alt='icons'
@@ -63,7 +65,12 @@ function AboutCard({ index, item }: AboutCardProps) {
                 height={50}
               />
             </div>
-            {item.text}
+            <span className='hidden w-full px-2 text-center break-all md:block'>
+              {item.text}
+            </span>
+            <span className='text-center md:hidden'>
+              {item.title === '연락처' ? item.text : 'click me!'}
+            </span>
           </div>
         </div>
       </div>

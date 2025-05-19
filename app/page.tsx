@@ -183,12 +183,12 @@ export default function Home() {
         </section>
         <section
           id='about'
-          className='bg-foreground flex w-full flex-col px-30 py-[5rem] text-[#292a31]'
+          className='bg-foreground flex w-full flex-col px-20 py-[5rem] text-[#292a31] lg:px-30'
         >
-          <div className='mb-5 text-[3.5rem] font-black'>
+          <div className='mb-5 text-[2.5rem] font-black md:text-[3.5rem]'>
             <a className='text-blue-400'>A</a>bout
           </div>
-          <div className='flex gap-10'>
+          <div className='flex flex-col gap-10 md:flex-row'>
             <div className='grid w-full flex-1 grid-cols-2 grid-rows-3 gap-5'>
               {aboutData.map((item, index) => (
                 <AboutCard index={index} item={item} key={item.title} />
@@ -196,8 +196,10 @@ export default function Home() {
             </div>
             <div className='flex-1'>
               <div className='mb-[1rem]'>
-                <span className='text-[2.5rem] font-bold'>박지혜</span>
-                <span className='text-[1.8rem]'> ParkJihye</span>
+                <span className='text-[1.5rem] font-bold md:text-[2.5rem]'>
+                  박지혜
+                </span>
+                <span className='text-[1rem] md:text-[1.8rem]'> ParkJihye</span>
               </div>
               <div className='mb-10 leading-[1.7rem]'>
                 안녕하세요, <a className='font-bold'>프론트엔드 개발자 </a>
@@ -211,7 +213,7 @@ export default function Home() {
 
               <div className='mb-[2rem] leading-[2rem]'>
                 <div className='mb-1 border-b-1 border-blue-400 pb-1'>
-                  <span className='text-[1.5rem] font-extrabold'>
+                  <span className='text-[1.2rem] font-extrabold md:text-[1.5rem]'>
                     Education
                   </span>
                 </div>
@@ -230,7 +232,7 @@ export default function Home() {
               </div>
               <div className='mb-[2rem]'>
                 <div className='mb-1 border-b-1 border-blue-400 pb-1'>
-                  <span className='text-[1.5rem] font-extrabold'>
+                  <span className='text-[1.2rem] font-extrabold md:text-[1.5rem]'>
                     Certification
                   </span>
                 </div>
