@@ -310,13 +310,13 @@ export default function Home() {
         </section>
         <section
           id='career'
-          className='bg-foreground flex min-h-dvh w-full flex-col px-30 pt-[5rem] pb-[5rem] text-zinc-900'
+          className='bg-foreground flex min-h-dvh w-full flex-col px-10 sm:px-20 pt-[5rem] pb-[5rem] text-zinc-900 lg:px-30'
         >
-          <div className='mb-[2rem] text-[3.5rem] font-black'>
+          <div className='mb-[2rem] text-[2.5rem] font-black md:text-[3.5rem]'>
             <a className='text-blue-400'>C</a>areer
           </div>
-          <div className='flex w-full gap-[1rem] rounded-[1rem] bg-blue-950/10 px-[2rem] py-[2rem]'>
-            <div className='flex flex-1 flex-col'>
+          <div className='flex w-full flex-col gap-[1rem] rounded-[1rem] bg-blue-950/10 px-[2rem] py-[2rem] md:flex-row'>
+            <div className='flex flex-1 flex-col pb-4 md:pb-0'>
               <span className=''>2020.06 ~ 2023.06</span>
               <span className='text-[1.5rem] font-bold'>(주)베이리스</span>
               <span className='text-blue-950/70'>플랫폼팀 / 연구원</span>
