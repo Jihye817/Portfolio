@@ -36,25 +36,24 @@ function ProjectModal({ item, isOpen, setIsOpen }: ProjectModalProps) {
 
   return (
     isOpen && (
-      <div className='fixed inset-0 z-[999] flex min-h-dvh w-dvw items-start justify-center overflow-y-auto bg-black/50 px-40 py-10'>
+      <div className='fixed inset-0 z-[999] flex min-h-dvh w-dvw items-start justify-center overflow-y-auto bg-black/50 px-10 py-10 md:px-40'>
         <div
           className='bg-foreground w-full overflow-hidden rounded-[1rem] border-1 text-zinc-900'
           ref={modalRef}
         >
-          <div className='text-foreground flex items-center justify-between border-b-1 bg-zinc-700 px-10 pt-5 pb-[1rem] text-[1.5rem]'>
+          <div className='text-foreground flex items-center justify-between border-b-1 bg-zinc-700 px-5 pt-5 pb-[1rem] text-[1.2rem] md:px-10 md:text-[1.5rem]'>
             <div>프로젝트 상세보기</div>
-            <div>
+            <div className='relative h-[25px] w-[25px] md:h-[30px] md:w-[30px]'>
               <Image
                 src={'/assets/icons/common/close.png'}
                 alt='close'
-                width={30}
-                height={30}
+                fill
                 className='cursor-pointer'
                 onClick={() => setIsOpen(false)}
               />
             </div>
           </div>
-          <div className='px-30 pt-10 pb-20'>
+          <div className='px-10 pt-10 pb-20 md:px-30'>
             <div className='mt-2 flex justify-center gap-1 text-[0.8rem]'>
               {item?.tags.map(tag => (
                 <span
@@ -66,7 +65,7 @@ function ProjectModal({ item, isOpen, setIsOpen }: ProjectModalProps) {
               ))}
             </div>
             <div className='mt-2 text-center'>{item?.date}</div>
-            <div className='text-center text-[2rem] font-bold'>
+            <div className='text-center text-[1.5rem] font-bold md:text-[2rem]'>
               {item?.title}
             </div>
             <div className='flex justify-center py-10'>
@@ -94,7 +93,7 @@ function ProjectModal({ item, isOpen, setIsOpen }: ProjectModalProps) {
             </div>
             <div className='mt-10 flex flex-col gap-5 border-t-1 pt-10'>
               <div>
-                <div className='text-[1.5rem] font-semibold'>
+                <div className='text-[1.2rem] font-semibold md:text-[1.5rem]'>
                   👥 진행 인원 및 역할
                 </div>
                 <ul className='ml-[2rem] list-disc py-1 leading-[1.7rem]'>
@@ -107,8 +106,10 @@ function ProjectModal({ item, isOpen, setIsOpen }: ProjectModalProps) {
                 </ul>
               </div>
               <div>
-                <div className='text-[1.5rem] font-semibold'>🛠️ 사용 기술</div>
-                <div className='ml-[2rem] flex gap-2 py-1'>
+                <div className='text-[1.2rem] font-semibold md:text-[1.5rem]'>
+                  🛠️ 사용 기술
+                </div>
+                <div className='ml-[2rem] flex gap-2 py-1 flex-wrap'>
                   {item?.skills.map(skill => (
                     <span
                       className='rounded-[0.5rem] bg-gray-400/50 px-[0.5rem] py-[0.2rem]'
@@ -120,7 +121,7 @@ function ProjectModal({ item, isOpen, setIsOpen }: ProjectModalProps) {
                 </div>
               </div>
               <div>
-                <div className='text-[1.5rem] font-semibold'>
+                <div className='text-[1.2rem] font-semibold md:text-[1.5rem]'>
                   ⚙️ 주요 기능 및 특징
                 </div>
                 <ul className='ml-[2rem] list-disc py-1 leading-[1.7rem]'>
@@ -130,17 +131,19 @@ function ProjectModal({ item, isOpen, setIsOpen }: ProjectModalProps) {
                 </ul>
               </div>
               <div>
-                <div className='text-[1.5rem] font-semibold'>✏️ 작업 내용</div>
+                <div className='text-[1.2rem] font-semibold md:text-[1.5rem]'>
+                  ✏️ 작업 내용
+                </div>
                 <ul className='ml-[2rem] list-disc py-1 leading-[1.7rem]'>
                   {item?.parts.map(part => <li key={part}>{part}</li>)}
                 </ul>
               </div>
               {item?.troubleshooting && (
                 <div>
-                  <div className='text-[1.5rem] font-semibold'>
+                  <div className='text-[1.2rem] font-semibold md:text-[1.5rem]'>
                     🔥 트러블슈팅
                   </div>
-                  <div className='ml-[2rem] py-1 whitespace-pre-line leading-[1.7rem]'>
+                  <div className='ml-[2rem] py-1 leading-[1.7rem] whitespace-pre-line'>
                     {item?.troubleshooting}
                   </div>
                 </div>

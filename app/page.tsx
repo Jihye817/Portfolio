@@ -288,12 +288,12 @@ export default function Home() {
 
         <section
           id='projects'
-          className='flex min-h-dvh w-full flex-col px-30 pt-[5rem]'
+          className='flex min-h-dvh w-full flex-col px-20 py-[5rem] md:pb-0 lg:px-30'
         >
-          <div className='mb-[2rem] text-[3.5rem] font-black'>
+          <div className='mb-[2rem] text-[2.5rem] font-black md:text-[3.5rem]'>
             <a className='text-blue-400'>P</a>rojects
           </div>
-          <div className='grid w-full grid-cols-3 gap-5'>
+          <div className='grid w-full grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3'>
             {projectData.map(item => (
               <ProjectCard
                 item={item}

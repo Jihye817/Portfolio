@@ -33,8 +33,12 @@ function ProjectCard({ item, handleButtonClick }: ProjectCardProps) {
         </div>
         <div className='flex h-[50%] flex-col justify-between px-4 py-5'>
           <div>
-            <div className='text-[1.5rem] font-semibold'>{item.title}</div>
-            <div className='text-white/70'>{item.summary}</div>
+            <div className='text-[1.3rem] font-semibold md:text-[1.5rem]'>
+              {item.title}
+            </div>
+            <div className='text-[0.9rem] text-white/70 md:text-[1rem]'>
+              {item.summary}
+            </div>
           </div>
           <div className='flex gap-1 text-[0.7rem]'>
             {item.tags.map(tag => (
