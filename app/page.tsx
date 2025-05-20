@@ -16,25 +16,37 @@ export default function Home() {
   const [isBgDark, setIsBgDark] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isTopButtonVisible, setIsTopButtonVisible] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const vh = window.innerHeight;
-      const threshold = window.innerHeight - window.innerHeight * 0.01;
-      setIsBgDark(window.scrollY > threshold);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const handleButtonClick = (project: Project) => {
     setSelectedProject(project);
     setIsOpen(true);
   };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const vh = window.innerHeight;
+      const threshold = window.innerHeight - window.innerHeight * 0.01;
+      const toTopThreshold = window.innerHeight * 0.5;
+      setIsBgDark(window.scrollY > threshold);
+      setIsTopButtonVisible(window.scrollY > toTopThreshold);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <div className='min-w-[375px]'>
@@ -210,7 +222,17 @@ export default function Home() {
                 새로운 기술에 대한 두려움 없이 꾸준히 학습하고 성장하는 자세를
                 가지고 있습니다.
               </div>
-
+              <div className='mb-[2rem] leading-[2rem]'>
+                <div className='mb-1 border-b-1 border-blue-400 pb-1'>
+                  <span className='text-[1.2rem] font-extrabold md:text-[1.5rem]'>
+                    Career
+                  </span>
+                </div>
+                <div className=''>
+                  <span className='mr-5 font-bold'>- 2020.06 ~ 2023.06</span>
+                  (주)베이리스 (웹 개발자)
+                </div>
+              </div>
               <div className='mb-[2rem] leading-[2rem]'>
                 <div className='mb-1 border-b-1 border-blue-400 pb-1'>
                   <span className='text-[1.2rem] font-extrabold md:text-[1.5rem]'>
@@ -230,7 +252,7 @@ export default function Home() {
                   프로그래머스 웹 풀 사이클 개발 데브코스 5기
                 </div>
               </div>
-              <div className='mb-[2rem]'>
+              <div className='mb-[2rem] leading-[2rem]'>
                 <div className='mb-1 border-b-1 border-blue-400 pb-1'>
                   <span className='text-[1.2rem] font-extrabold md:text-[1.5rem]'>
                     Certification
@@ -310,7 +332,7 @@ export default function Home() {
         </section>
         <section
           id='career'
-          className='bg-foreground flex min-h-dvh w-full flex-col px-10 sm:px-20 pt-[5rem] pb-[5rem] text-zinc-900 lg:px-30'
+          className='bg-foreground flex min-h-dvh w-full flex-col px-10 pt-[5rem] pb-[5rem] text-zinc-900 sm:px-20 lg:px-30'
         >
           <div className='mb-[2rem] text-[2.5rem] font-black md:text-[3.5rem]'>
             <a className='text-blue-400'>C</a>areer
@@ -331,6 +353,22 @@ export default function Home() {
         <footer className='mt-[5rem] text-center text-[0.8rem]'>
           Copyright 2025. ParkJihye All rights reserved.
         </footer>
+        {isTopButtonVisible && (
+          <button
+            onClick={scrollToTop}
+            className={
+              'bg-background/50 fixed right-5 bottom-5 flex h-[4rem] w-[4rem] cursor-pointer justify-center rounded-full border-1'
+            }
+          >
+            <div className='relative aspect-square w-[1.5rem]'>
+              <Image
+                src={'/assets/icons/common/arrow-up.svg'}
+                alt='top-button'
+                fill
+              />
+            </div>
+          </button>
+        )}
       </main>
     </div>
   );
