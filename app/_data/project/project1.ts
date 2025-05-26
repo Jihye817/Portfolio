@@ -39,4 +39,6 @@ export const project1 = {
     \nskipHydration 옵션을 적용하여 초기 하이드레이션을 제거하고, 추후 렌더링 시 하이드레이션을 호출하는 방식으로 변경하여 해결하였습니다. \
     \n이 경험을 통해 SSR과 CSR의 렌더링 순서 및 상태 관리 방식의 차이를 이해할 수 있었습니다.',
   retrospect: '',
+  github: 'https://github.com/kdt5-3rd',
+  url: 'https://ttolgaebi.com',
 };

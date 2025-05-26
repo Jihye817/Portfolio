@@ -21,4 +21,6 @@ export const project2 = {
   ],
   troubleshooting: '',
   retrospect: '',
+  github: 'https://github.com/Jihye817/Portfolio',
+  url: 'https://jihye-portfolio.vercel.app/',
 };

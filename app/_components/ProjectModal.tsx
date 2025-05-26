@@ -109,7 +109,7 @@ function ProjectModal({ item, isOpen, setIsOpen }: ProjectModalProps) {
                 <div className='text-[1.2rem] font-semibold md:text-[1.5rem]'>
                   🛠️ 사용 기술
                 </div>
-                <div className='ml-[2rem] flex gap-2 py-1 flex-wrap'>
+                <div className='ml-[2rem] flex flex-wrap gap-2 py-1'>
                   {item?.skills.map(skill => (
                     <span
                       className='rounded-[0.5rem] bg-gray-400/50 px-[0.5rem] py-[0.2rem]'
@@ -150,8 +150,28 @@ function ProjectModal({ item, isOpen, setIsOpen }: ProjectModalProps) {
               )}
               {item?.retrospect && (
                 <div>
-                  <div className='text-[1.5rem] font-semibold'>🤔 회고</div>
-                  <div className='ml-[2rem]'>{item?.retrospect}</div>
+                  <div className='text-[1.5rem] font-semibold md:text-[1.5rem]'>
+                    🤔 회고
+                  </div>
+                  <div className='ml-[2rem] py-1 leading-[1.7rem]'>
+                    {item?.retrospect}
+                  </div>
+                </div>
+              )}
+              {item?.url && (
+                <div>
+                  <div className='text-[1.5rem] font-semibold md:text-[1.5rem]'>
+                    🔗 프로젝트 배포 링크
+                  </div>
+                  <div className='ml-[2rem] py-1 leading-[1.7rem]'>
+                    <a
+                      href={item?.url}
+                      target='_blank'
+                      className='hover:text-blue-500'
+                    >
+                      {item?.url}
+                    </a>
+                  </div>
                 </div>
               )}
             </div>

@@ -13,4 +13,6 @@ export interface Project {
   parts: string[];
   troubleshooting: string;
   retrospect: string;
+  github: string;
+  url: string;
 }

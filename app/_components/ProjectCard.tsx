@@ -17,9 +17,13 @@ function ProjectCard({ item, handleButtonClick }: ProjectCardProps) {
           >
             자세히보기
           </div>
-          <div className='w-2/3 cursor-pointer rounded-[0.2rem] border-1 py-2 hover:bg-white/20'>
+          <a
+            href={item.github}
+            target='_blank'
+            className='w-2/3 cursor-pointer rounded-[0.2rem] border-1 py-2 hover:bg-white/20'
+          >
             Github 바로가기
-          </div>
+          </a>
         </div>
       </div>
       <div className='relative h-full overflow-hidden rounded-[1rem] bg-black/70'>
