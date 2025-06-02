@@ -343,7 +343,7 @@ export default function Home() {
               <span className='text-[1.5rem] font-bold'>(주)베이리스</span>
               <span className='text-blue-950/70'>플랫폼팀 / 연구원</span>
             </div>
-            <div className='flex-4'>
+            <div className='min-w-0 flex-1 md:flex-4'>
               {careerData.map(career => (
                 <CareerListItem career={career} key={career.title} />
               ))}

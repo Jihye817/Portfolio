@@ -12,4 +12,5 @@ export interface Career {
   position: string;
   skills: Skills[];
   details: string[];
+  images: string[];
 }
