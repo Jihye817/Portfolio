@@ -315,7 +315,7 @@ export default function Home() {
           <div className='mb-[2rem] text-[2.5rem] font-black md:text-[3.5rem]'>
             <a className='text-blue-400'>P</a>rojects
           </div>
-          <div className='grid w-full grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3'>
+          <div className='grid w-full grid-cols-1 gap-5 pb-5 md:grid-cols-2 lg:grid-cols-3'>
             {projectData.map(item => (
               <ProjectCard
                 item={item}
